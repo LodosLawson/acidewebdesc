@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC-T-IDE - Azerbaycan Programlama Dili IDE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-code"></i>
+                <span>AC-T-IDE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="#versions" class="nav-link">Versiyonlar</a></li>
+                <li><a href="#structure" class="nav-link">Yapı</a></li>
+                <li><a href="#features" class="nav-link">Özellikler</a></li>
+                <li><a href="#installation" class="nav-link">Kurulum</a></li>
+                <li><a href="#code" class="nav-link">Kod Yapısı</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">AC-T-IDE</span>
+                    <br>Azerbaycan Programlama Dili IDE
+                </h1>
+                <p class="hero-subtitle">Azerbaycan dilinde programlama yapmak için geliştirilmiş entegre geliştirme ortamı</p>
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-code-branch"></i> Version 5.0</span>
+                    <span class="badge"><i class="fas fa-calendar"></i> 2024</span>
+                    <span class="badge"><i class="fas fa-laptop-code"></i> Multi-Platform</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn btn-primary">Kurulum Kılavuzu</a>
+                    <a href="#code" class="btn btn-secondary">Kodları İncele</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Genel Bilgi</h3>
+                    <p>AC-T-IDE, Azerbaycan dilinde programlama yapmak için özel olarak tasarlanmış bir entegre geliştirme ortamıdır. Desktop, Android ve Web platformlarında çalışabilen çok platformlu bir IDE'dir.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Geliştirme Tarihi</h3>
+                    <p>Proje 2022 yılında başlatılmış ve sürekli geliştirilmektedir. İlk versiyon (V0.3) 14 Haziran 2022'de yayınlanmıştır.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Geliştirici</h3>
+                    <p>Mehemmed AC tarafından geliştirilmiştir. Proje açık kaynak kodlu olup GitHub üzerinden yayınlanabilir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Versions Section -->
+    <section id="versions" class="versions-section">
+        <div class="container">
+            <h2 class="section-title">Proje Versiyonları</h2>
+            <div class="versions-grid">
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>AC-T-IDE Desktop</h3>
+                        <span class="version-badge">v3.0</span>
+                    </div>
+                    <div class="version-body">
+                        <p><strong>Platform:</strong> Java Desktop (Swing)</p>
+                        <p><strong>Build Tool:</strong> Maven</p>
+                        <p><strong>Java Version:</strong> 13</p>
+                        <p><strong>Özellikler:</strong></p>
+                        <ul>
+                            <li>GUI tabanlı kod editörü</li>
+                            <li>Syntax highlighting</li>
+                            <li>Çoklu dosya desteği</li>
+                            <li>AC kodunu Java ve C'ye derleme</li>
+                        </ul>
+                        <div class="version-date">
+                            <i class="fas fa-calendar"></i> İlk Sürüm: 14-06-2022
+                        </div>
+                    </div>
+                </div>
+
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>AC-T-IDE Android</h3>
+                        <span class="version-badge">v1.0</span>
+                    </div>
+                    <div class="version-body">
+                        <p><strong>Platform:</strong> Android</p>
+                        <p><strong>Build Tool:</strong> Gradle (Kotlin DSL)</p>
+                        <p><strong>Min SDK:</strong> 24</p>
+                        <p><strong>Target SDK:</strong> 34</p>
+                        <p><strong>Özellikler:</strong></p>
+                        <ul>
+                            <li>Mobil kod editörü</li>
+                            <li>Firebase entegrasyonu</li>
+                            <li>Blockchain güvenlik sistemi</li>
+                            <li>Dosya yönetimi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>KBIR Interpreter</h3>
+                        <span class="version-badge">v1.1.0</span>
+                    </div>
+                    <div class="version-body">
+                        <p><strong>Platform:</strong> Python</p>
+                        <p><strong>Dil:</strong> Python 3</p>
+                        <p><strong>Release Date:</strong> 2024-03-15</p>
+                        <p><strong>Özellikler:</strong></p>
+                        <ul>
+                            <li>AC kodunu yorumlama</li>
+                            <li>Lexer ve Parser</li>
+                            <li>Interpreter motoru</li>
+                            <li>Hata yönetimi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>AC T V3.2</h3>
+                        <span class="version-badge">v3.2</span>
+                    </div>
+                    <div class="version-body">
+                        <p><strong>Platform:</strong> Windows Executable</p>
+                        <p><strong>Format:</strong> .exe</p>
+                        <p><strong>Özellikler:</strong></p>
+                        <ul>
+                            <li>Standalone executable</li>
+                            <li>Hızlı başlatma</li>
+                            <li>Kurulum gerektirmez</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>AC-IDE-MODER</h3>
+                        <span class="version-badge">Modern</span>
+                    </div>
+                    <div class="version-body">
+                        <p><strong>Platform:</strong> Java</p>
+                        <p><strong>Build Tool:</strong> Gradle</p>
+                        <p><strong>Java Version:</strong> 20</p>
+                        <p><strong>Özellikler:</strong></p>
+                        <ul>
+                            <li>Modern Gradle yapısı</li>
+                            <li>Güncel Java sürümü</li>
+                            <li>Geliştirme aşamasında</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structure Section -->
+    <section id="structure" class="structure-section">
+        <div class="container">
+            <h2 class="section-title">Proje Yapısı</h2>
+            <div class="structure-content">
+                <div class="structure-tree">
+                    <h3>Desktop IDE (ACTKernal)</h3>
+                    <pre><code>ACTKernal/
+├── src/main/java/
+│   ├── GUI/              # Kullanıcı arayüzü
+│   │   ├── IDE/         # Ana IDE penceresi
+│   │   ├── Consol/      # Konsol penceresi
+│   │   └── KomekHelp/   # Yardım sistemi
+│   ├── Tehliledici/     # Derleyici ve yorumlayıcı
+│   │   ├── ACT.java
+│   │   ├── ACTehliledici.java
+│   │   └── Tool/        # Derleyici araçları
+│   ├── backend/         # Arka plan işlemleri
+│   │   ├── KodIsleyici.java
+│   │   ├── Translater.java
+│   │   └── encrypt5/    # Şifreleme sistemi
+│   └── ac/              # AC dil sistemi
+└── pom.xml              # Maven konfigürasyonu</code></pre>
+                </div>
+
+                <div class="structure-tree">
+                    <h3>Android IDE</h3>
+                    <pre><code>AndroidVersion/ACIDEAndroid/
+├── app/
+│   ├── src/main/java/com/ACT/Android/
+│   │   ├── MainActivity.java      # Ana aktivite
+│   │   ├── FileManager.java       # Dosya yönetimi
+│   │   ├── BlockChain/            # Blockchain sistemi
+│   │   └── Tehliledici/           # Android derleyici
+│   └── build.gradle.kts
+├── KBIR/                            # Python interpreter
+│   ├── lexer.py
+│   ├── parser.py
+│   ├── interpreter.py
+│   └── version.py
+└── gradle/</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Özellikler ve Fonksiyonlar</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Kod Editörü</h3>
+                    <ul>
+                        <li>Syntax highlighting</li>
+                        <li>Satır numaralandırma</li>
+                        <li>Otomatik girinti</li>
+                        <li>Çoklu sekme desteği</li>
+                        <li>Kod tamamlama</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3>Derleyici (Tehliledici)</h3>
+                    <ul>
+                        <li>AC kodunu Java'ya derleme</li>
+                        <li>AC kodunu C'ye derleme</li>
+                        <li>Hata yakalama ve raporlama</li>
+                        <li>Lexer ve Parser</li>
+                        <li>Syntax kontrolü</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3>Dosya Yönetimi</h3>
+                    <ul>
+                        <li>.ac uzantılı dosya desteği</li>
+                        <li>Klasör yapısı desteği</li>
+                        <li>Dosya oluşturma/düzenleme</li>
+                        <li>Proje yönetimi</li>
+                        <li>Dosya geçmişi</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Güvenlik Sistemi</h3>
+                    <ul>
+                        <li>Blockchain tabanlı kod takibi</li>
+                        <li>Hash doğrulama</li>
+                        <li>Değişiklik geçmişi</li>
+                        <li>E5 şifreleme sistemi</li>
+                        <li>Yazılım kontrol sistemi</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Çoklu Dil Desteği</h3>
+                    <ul>
+                        <li>Azerbaycan dili</li>
+                        <li>İngilizce</li>
+                        <li>Dil değiştirme</li>
+                        <li>Yerelleştirme</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Firebase Entegrasyonu</h3>
+                    <ul>
+                        <li>Analytics</li>
+                        <li>Crash Reporting</li>
+                        <li>Database</li>
+                        <li>Kullanıcı takibi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Structure Section -->
+    <section id="code" class="code-section">
+        <div class="container">
+            <h2 class="section-title">Kod Yapısı ve Fonksiyonlar</h2>
+            
+            <div class="code-category">
+                <h3><i class="fas fa-folder-open"></i> Ana Sınıflar</h3>
+                <div class="code-list">
+                    <div class="code-item">
+                        <h4>IDE.java</h4>
+                        <p><strong>Konum:</strong> GUI/IDE/IDE.java</p>
+                        <p><strong>Açıklama:</strong> Ana IDE penceresi. Swing tabanlı GUI bileşenleri içerir.</p>
+                        <p><strong>Versiyon:</strong> AC-T-IDE Version 3.0</p>
+                        <p><strong>Özellikler:</strong></p>
+                        <ul>
+                            <li>Kod editörü yönetimi</li>
+                            <li>Dosya işlemleri</li>
+                            <li>Menü sistemi</li>
+                            <li>Çoklu sekme desteği</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>ACTehliledici.java</h4>
+                        <p><strong>Konum:</strong> Tehliledici/ACTehliledici.java</p>
+                        <p><strong>Açıklama:</strong> AC kodunu derleyen ve yorumlayan ana sınıf.</p>
+                        <p><strong>Fonksiyonlar:</strong></p>
+                        <ul>
+                            <li>ACMain() - Ana menü</li>
+                            <li>ACTIDEGUIMain() - GUI IDE başlatma</li>
+                            <li>ACTKernalMain() - Kernel modu</li>
+                            <li>ACTKernalOzelMain() - Özel geliştirici modu</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>KodIsleyici.java</h4>
+                        <p><strong>Konum:</strong> backend/KodIsleyici.java</p>
+                        <p><strong>Açıklama:</strong> Kod işleme ve analiz sınıfı.</p>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>Translater.java</h4>
+                        <p><strong>Konum:</strong> backend/Translater.java</p>
+                        <p><strong>Açıklama:</strong> Çoklu dil desteği için çeviri sınıfı.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-category">
+                <h3><i class="fas fa-tools"></i> Araçlar ve Yardımcı Sınıflar</h3>
+                <div class="code-list">
+                    <div class="code-item">
+                        <h4>Fonksiyon.java</h4>
+                        <p><strong>Konum:</strong> Tehliledici/Tool/Fonksiyon.java</p>
+                        <p><strong>Açıklama:</strong> Fonksiyon tanımlama ve yönetimi.</p>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>Deyisgen.java</h4>
+                        <p><strong>Konum:</strong> Tehliledici/Tool/Deyisgen.java</p>
+                        <p><strong>Açıklama:</strong> Değişken yönetimi sınıfı.</p>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>Error.java</h4>
+                        <p><strong>Konum:</strong> Tehliledici/Tool/Error/Error.java</p>
+                        <p><strong>Açıklama:</strong> Hata yönetimi ve raporlama.</p>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>ArithmeticLogic.java</h4>
+                        <p><strong>Konum:</strong> Tehliledici/Tool/ArithmeticLogic.java</p>
+                        <p><strong>Açıklama:</strong> Aritmetik ve mantık işlemleri.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-category">
+                <h3><i class="fab fa-android"></i> Android Bileşenleri</h3>
+                <div class="code-list">
+                    <div class="code-item">
+                        <h4>MainActivity.java</h4>
+                        <p><strong>Konum:</strong> app/src/main/java/com/ACT/Android/MainActivity.java</p>
+                        <p><strong>Açıklama:</strong> Android uygulamasının ana aktivitesi.</p>
+                        <p><strong>Özellikler:</strong></p>
+                        <ul>
+                            <li>Kod editörü</li>
+                            <li>Firebase entegrasyonu</li>
+                            <li>Blockchain sistemi</li>
+                            <li>Dosya yönetimi</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>FileManager.java</h4>
+                        <p><strong>Açıklama:</strong> Android dosya yönetim sistemi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-category">
+                <h3><i class="fab fa-python"></i> Python Interpreter (KBIR)</h3>
+                <div class="code-list">
+                    <div class="code-item">
+                        <h4>main.py</h4>
+                        <p><strong>Konum:</strong> KBIR/main.py</p>
+                        <p><strong>Versiyon:</strong> 1.1.0 (2024-03-15)</p>
+                        <p><strong>Açıklama:</strong> AC kodunu yorumlayan Python tabanlı interpreter.</p>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>lexer.py</h4>
+                        <p><strong>Açıklama:</strong> Token analizi ve lexer.</p>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>parser.py</h4>
+                        <p><strong>Açıklama:</strong> Syntax analizi ve parser.</p>
+                    </div>
+
+                    <div class="code-item">
+                        <h4>interpreter.py</h4>
+                        <p><strong>Açıklama:</strong> Kod yorumlama motoru.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="installation-section">
+        <div class="container">
+            <h2 class="section-title">Kurulum Talimatları</h2>
+            
+            <div class="installation-tabs">
+                <button class="tab-btn active" data-tab="desktop">Desktop IDE</button>
+                <button class="tab-btn" data-tab="android">Android IDE</button>
+                <button class="tab-btn" data-tab="python">Python Interpreter</button>
+            </div>
+
+            <div class="tab-content active" id="desktop">
+                <div class="install-card">
+                    <h3><i class="fas fa-desktop"></i> Desktop IDE Kurulumu</h3>
+                    <div class="install-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Gereksinimler</h4>
+                                <ul>
+                                    <li>Java JDK 13 veya üzeri</li>
+                                    <li>Maven 3.6+</li>
+                                    <li>NetBeans IDE (opsiyonel)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Projeyi İndirin</h4>
+                                <pre><code>git clone [repository-url]
+cd ACTKernal</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Maven ile Derleyin</h4>
+                                <pre><code>mvn clean install</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Çalıştırın</h4>
+                                <pre><code>java -jar target/AC-IDE-AC-T-IDE\ Version\ 3.0.jar</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="android">
+                <div class="install-card">
+                    <h3><i class="fab fa-android"></i> Android IDE Kurulumu</h3>
+                    <div class="install-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Gereksinimler</h4>
+                                <ul>
+                                    <li>Android Studio</li>
+                                    <li>Android SDK 24+</li>
+                                    <li>Gradle 8.1+</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Projeyi Açın</h4>
+                                <pre><code>Android Studio'da AndroidVersion/ACIDEAndroid klasörünü açın</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Firebase Yapılandırması</h4>
+                                <p>google-services.json dosyasını app/ klasörüne ekleyin</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Derleyin ve Çalıştırın</h4>
+                                <pre><code>./gradlew assembleDebug
+# veya Android Studio'dan Run butonuna basın</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="python">
+                <div class="install-card">
+                    <h3><i class="fab fa-python"></i> Python Interpreter (KBIR) Kurulumu</h3>
+                    <div class="install-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Gereksinimler</h4>
+                                <ul>
+                                    <li>Python 3.7+</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>KBIR Klasörüne Gidin</h4>
+                                <pre><code>cd AndroidVersion/ACIDEAndroid/KBIR</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Çalıştırın</h4>
+                                <pre><code>python main.py</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-section">
+        <div class="container">
+            <h2 class="section-title">Teknoloji Yığını</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-java"></i>
+                    <h4>Java</h4>
+                    <p>Desktop IDE için Java 13+</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-android"></i>
+                    <h4>Android</h4>
+                    <p>Kotlin/Java, SDK 24-34</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <h4>Python</h4>
+                    <p>KBIR Interpreter için Python 3.7+</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-box"></i>
+                    <h4>Maven</h4>
+                    <p>Desktop proje yönetimi</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-cog"></i>
+                    <h4>Gradle</h4>
+                    <p>Android proje yönetimi</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-fire"></i>
+                    <h4>Firebase</h4>
+                    <p>Analytics, Database, Crash Reporting</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-link"></i>
+                    <h4>Blockchain</h4>
+                    <p>Kod güvenlik sistemi</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>E5 Encryption</h4>
+                    <p>Özel şifreleme sistemi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AC-T-IDE</h3>
+                    <p>Azerbaycan Programlama Dili için Entegre Geliştirme Ortamı</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Versiyonlar</h4>
+                    <ul>
+                        <li>Desktop IDE v3.0</li>
+                        <li>Android IDE v1.0</li>
+                        <li>KBIR v1.1.0</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Geliştirici</h4>
+                    <p>Mehemmed AC</p>
+                    <p>2022 - 2024</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Yayınlama</h4>
+                    <p>Bu site GitHub Pages veya başka bir statik hosting servisi üzerinden yayınlanabilir.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AC-T-IDE. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
