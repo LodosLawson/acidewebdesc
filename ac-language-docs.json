@@ -1,0 +1,663 @@
+{
+  "language": {
+    "name": "AC Tehliledici",
+    "fullName": "Azerbaycan Programlama Dili - AC Tehliledici",
+    "version": "5.0",
+    "latestVersion": "5.0",
+    "releaseDate": "2024",
+    "developer": "Mehemmed AC",
+    "description": "Azerbaycan dilinde programlama yapmak için geliştirilmiş modern bir programlama dili. Türkçe ve Azerbaycan Türkçesi anahtar kelimeler kullanır.",
+    "type": "Interpreted Language",
+    "paradigm": ["Procedural", "Object-Oriented", "Functional"],
+    "platforms": ["Desktop", "Android", "Web"],
+    "compilers": ["Java Compiler", "C Compiler", "Python Interpreter (KBIR)"]
+  },
+  "keywords": {
+    "dataTypes": [
+      {
+        "keyword": "reqem",
+        "english": "integer",
+        "type": "dataType",
+        "description": "Tam sayı veri tipi",
+        "example": "reqem sayi = 5",
+        "equivalent": "int"
+      },
+      {
+        "keyword": "herif",
+        "english": "string",
+        "type": "dataType",
+        "description": "Metin veri tipi",
+        "example": "herif mesaj = \"Merhaba\"",
+        "equivalent": "String"
+      }
+    ],
+    "controlFlow": [
+      {
+        "keyword": "baslanqic",
+        "english": "start",
+        "type": "blockStart",
+        "description": "Program bloğunun başlangıcı",
+        "example": "baslanqic\n    yazdir: \"Merhaba\"\nson",
+        "required": true
+      },
+      {
+        "keyword": "son",
+        "english": "end",
+        "type": "blockEnd",
+        "description": "Program bloğunun sonu",
+        "example": "baslanqic\n    yazdir: \"Merhaba\"\nson",
+        "required": true
+      },
+      {
+        "keyword": "dif",
+        "english": "if",
+        "type": "conditional",
+        "description": "Koşullu ifade",
+        "example": "dif (sayi > 0) {\n    yazdir: \"Pozitif\"\n}",
+        "syntax": "dif (kosul) { kod }"
+      },
+      {
+        "keyword": "eksedif",
+        "english": "elif",
+        "type": "conditional",
+        "description": "Alternatif koşul",
+        "example": "dif (sayi > 0) {\n    yazdir: \"Pozitif\"\n} eksedif (sayi < 0) {\n    yazdir: \"Negatif\"\n}",
+        "syntax": "eksedif (kosul) { kod }"
+      },
+      {
+        "keyword": "eks",
+        "english": "else",
+        "type": "conditional",
+        "description": "Diğer durum",
+        "example": "dif (sayi > 0) {\n    yazdir: \"Pozitif\"\n} eks {\n    yazdir: \"Sıfır veya Negatif\"\n}",
+        "syntax": "eks { kod }"
+      }
+    ],
+    "functions": [
+      {
+        "keyword": "fonksiyon",
+        "english": "function",
+        "type": "function",
+        "description": "Fonksiyon tanımlama",
+        "example": "fonksiyon topla(reqem a, reqem b) : reqem {\n    geri a + b\n}",
+        "syntax": "fonksiyon isim(parametreler) : donusTipi { kod }"
+      },
+      {
+        "keyword": "geri",
+        "english": "return",
+        "type": "function",
+        "description": "Fonksiyondan değer döndürme",
+        "example": "geri sonuc",
+        "syntax": "geri deger"
+      }
+    ],
+    "output": [
+      {
+        "keyword": "yazdir",
+        "english": "print",
+        "type": "output",
+        "description": "Ekrana yazdırma",
+        "example": "yazdir: \"Merhaba Dünya\"",
+        "syntax": "yazdir: deger1, deger2, ...",
+        "variations": [
+          "yazdir: \"metin\"",
+          "yazdir: deyisgen",
+          "yazdir: \"Metin:\", deyisgen",
+          "yazdir: fonksiyon()"
+        ]
+      },
+      {
+        "keyword": "YAZDIR",
+        "english": "PRINT",
+        "type": "output",
+        "description": "Yazdırma (büyük harf alternatifi)",
+        "caseSensitive": false
+      },
+      {
+        "keyword": "PRINT",
+        "english": "print",
+        "type": "output",
+        "description": "Yazdırma (İngilizce alternatifi)",
+        "caseSensitive": false
+      }
+    ],
+    "variables": [
+      {
+        "keyword": "ustglobal",
+        "english": "global",
+        "type": "variable",
+        "description": "Global değişken tanımlama",
+        "example": "ustglobal reqem globalSayi = 10",
+        "syntax": "ustglobal tip isim = deger"
+      }
+    ],
+    "oop": [
+      {
+        "keyword": "sinif",
+        "english": "class",
+        "type": "oop",
+        "description": "Sınıf tanımlama",
+        "example": "sinif Insan {\n    acik reqem yas\n    acik herif ad\n}",
+        "syntax": "sinif Isim { ozellikler }"
+      },
+      {
+        "keyword": "yeni",
+        "english": "new",
+        "type": "oop",
+        "description": "Yeni nesne oluşturma",
+        "example": "yeni Insan()",
+        "syntax": "yeni SinifIsmi()"
+      },
+      {
+        "keyword": "bu",
+        "english": "this",
+        "type": "oop",
+        "description": "Mevcut nesneye referans",
+        "example": "bu.yas = 25",
+        "syntax": "bu.ozellik"
+      },
+      {
+        "keyword": "miras",
+        "english": "extends",
+        "type": "oop",
+        "description": "Kalıtım",
+        "example": "sinif Ogrenci miras Insan { }",
+        "syntax": "sinif YeniSinif miras EbeveynSinif { }"
+      },
+      {
+        "keyword": "acik",
+        "english": "public",
+        "type": "accessModifier",
+        "description": "Genel erişim",
+        "example": "acik reqem yas"
+      },
+      {
+        "keyword": "gizli",
+        "english": "private",
+        "type": "accessModifier",
+        "description": "Özel erişim",
+        "example": "gizli reqem sifre"
+      },
+      {
+        "keyword": "korumali",
+        "english": "protected",
+        "type": "accessModifier",
+        "description": "Korumalı erişim",
+        "example": "korumali reqem id"
+      },
+      {
+        "keyword": "sabit",
+        "english": "static",
+        "type": "modifier",
+        "description": "Statik özellik",
+        "example": "sabit reqem sayac = 0"
+      }
+    ],
+    "modules": [
+      {
+        "keyword": "imp",
+        "english": "import",
+        "type": "module",
+        "description": "Modül içe aktarma",
+        "example": "imp math\nimp io",
+        "syntax": "imp modul_adi"
+      }
+    ],
+    "special": [
+      {
+        "keyword": "DIF",
+        "english": "DEF",
+        "type": "special",
+        "description": "Fonksiyon tanımlama (alternatif syntax)",
+        "example": "DIF: fonksiyon_ismi<parametreler>{ kod }",
+        "legacy": true
+      }
+    ]
+  },
+  "operators": {
+    "arithmetic": [
+      {
+        "operator": "+",
+        "name": "Toplama",
+        "english": "Addition",
+        "example": "reqem sonuc = 5 + 3",
+        "precedence": 4
+      },
+      {
+        "operator": "-",
+        "name": "Çıkarma",
+        "english": "Subtraction",
+        "example": "reqem sonuc = 5 - 3",
+        "precedence": 4
+      },
+      {
+        "operator": "*",
+        "name": "Çarpma",
+        "english": "Multiplication",
+        "example": "reqem sonuc = 5 * 3",
+        "precedence": 5
+      },
+      {
+        "operator": "/",
+        "name": "Bölme",
+        "english": "Division",
+        "example": "reqem sonuc = 10 / 2",
+        "precedence": 5
+      },
+      {
+        "operator": "%",
+        "name": "Mod",
+        "english": "Modulo",
+        "example": "reqem sonuc = 10 % 3",
+        "precedence": 5
+      },
+      {
+        "operator": "**",
+        "name": "Üs",
+        "english": "Power",
+        "example": "reqem sonuc = 2 ** 3",
+        "precedence": 6
+      }
+    ],
+    "comparison": [
+      {
+        "operator": "==",
+        "name": "Eşit",
+        "english": "Equal",
+        "example": "dif (sayi == 5) { }",
+        "precedence": 3
+      },
+      {
+        "operator": "!=",
+        "name": "Eşit Değil",
+        "english": "Not Equal",
+        "example": "dif (sayi != 0) { }",
+        "precedence": 3
+      },
+      {
+        "operator": "<",
+        "name": "Küçüktür",
+        "english": "Less Than",
+        "example": "dif (sayi < 10) { }",
+        "precedence": 3
+      },
+      {
+        "operator": ">",
+        "name": "Büyüktür",
+        "english": "Greater Than",
+        "example": "dif (sayi > 0) { }",
+        "precedence": 3
+      },
+      {
+        "operator": "<=",
+        "name": "Küçük Eşit",
+        "english": "Less or Equal",
+        "example": "dif (sayi <= 100) { }",
+        "precedence": 3
+      },
+      {
+        "operator": ">=",
+        "name": "Büyük Eşit",
+        "english": "Greater or Equal",
+        "example": "dif (sayi >= 0) { }",
+        "precedence": 3
+      }
+    ],
+    "logical": [
+      {
+        "operator": "ve",
+        "english": "and",
+        "name": "VE",
+        "example": "dif (sayi > 0 ve sayi < 100) { }",
+        "precedence": 2
+      },
+      {
+        "operator": "veya",
+        "english": "or",
+        "name": "VEYA",
+        "example": "dif (sayi == 0 veya sayi == 1) { }",
+        "precedence": 1
+      },
+      {
+        "operator": "degil",
+        "english": "not",
+        "name": "DEĞİL",
+        "example": "dif (degil (sayi == 0)) { }",
+        "precedence": 6
+      }
+    ],
+    "assignment": [
+      {
+        "operator": "=",
+        "name": "Atama",
+        "english": "Assignment",
+        "example": "reqem sayi = 5",
+        "precedence": 0
+      }
+    ],
+    "special": [
+      {
+        "operator": ":",
+        "name": "İki Nokta",
+        "description": "Yazdırma ve fonksiyon çağrılarında kullanılır",
+        "example": "yazdir: \"Merhaba\""
+      },
+      {
+        "operator": "<",
+        "name": "Fonksiyon Parametre",
+        "description": "Fonksiyon çağrılarında parametre ayırıcı",
+        "example": "fonksiyon_ismi<param1, param2>"
+      },
+      {
+        "operator": ">",
+        "name": "Fonksiyon Parametre Kapat",
+        "description": "Fonksiyon parametrelerinin kapatılması",
+        "example": "fonksiyon_ismi<param1, param2>"
+      }
+    ]
+  },
+  "syntax": {
+    "programStructure": {
+      "description": "Her AC programı baslanqic ile başlamalı ve son ile bitmelidir",
+      "required": true,
+      "example": "baslanqic\n    // kod buraya\nson"
+    },
+    "variableDeclaration": {
+      "syntax": "tip isim = deger",
+      "examples": [
+        "reqem sayi = 5",
+        "herif mesaj = \"Merhaba\"",
+        "ustglobal reqem globalSayi = 10"
+      ],
+      "rules": [
+        "Değişken isimleri harf, rakam ve alt çizgi içerebilir",
+        "Değişken isimleri rakamla başlayamaz",
+        "Değişken isimleri büyük/küçük harf duyarlıdır"
+      ]
+    },
+    "functionDeclaration": {
+      "syntax": "fonksiyon isim(parametreler) : donusTipi { kod }",
+      "examples": [
+        "fonksiyon topla(reqem a, reqem b) : reqem {\n    geri a + b\n}",
+        "fonksiyon yazdirMesaj(herif mesaj) {\n    yazdir: mesaj\n}"
+      ],
+      "rules": [
+        "Fonksiyon parametreleri parantez içinde tanımlanır",
+        "Dönüş tipi iki nokta (:) ile belirtilir",
+        "Fonksiyon gövdesi süslü parantez içinde olmalıdır",
+        "Değer döndürmek için 'geri' anahtar kelimesi kullanılır"
+      ],
+      "alternativeSyntax": {
+        "description": "Eski versiyonlarda DIF: syntax'ı kullanılırdı",
+        "example": "DIF: fonksiyon_ismi<parametreler>{ kod }",
+        "legacy": true
+      }
+    },
+    "functionCall": {
+      "syntax": "isim<parametreler>",
+      "examples": [
+        "topla<5, 3>",
+        "yazdirMesaj<\"Merhaba\">"
+      ],
+      "rules": [
+        "Fonksiyon çağrılarında < ve > karakterleri kullanılır",
+        "Parametreler virgülle ayrılır",
+        "Parametreler opsiyoneldir"
+      ]
+    },
+    "printStatement": {
+      "syntax": "yazdir: deger1, deger2, ...",
+      "examples": [
+        "yazdir: \"Merhaba Dünya\"",
+        "yazdir: sayi",
+        "yazdir: \"Sonuç:\", sonuc",
+        "yazdir: \"Toplam:\", topla<5, 3>"
+      ],
+      "rules": [
+        "İki nokta (:) zorunludur",
+        "Birden fazla değer virgülle ayrılabilir",
+        "String değerler çift tırnak içinde olmalıdır"
+      ]
+    },
+    "conditionalStatement": {
+      "syntax": "dif (kosul) { kod } eksedif (kosul) { kod } eks { kod }",
+      "examples": [
+        "dif (sayi > 0) {\n    yazdir: \"Pozitif\"\n}",
+        "dif (sayi > 0) {\n    yazdir: \"Pozitif\"\n} eksedif (sayi < 0) {\n    yazdir: \"Negatif\"\n} eks {\n    yazdir: \"Sıfır\"\n}"
+      ],
+      "rules": [
+        "Koşul parantez içinde olmalıdır",
+        "Kod bloğu süslü parantez içinde olmalıdır",
+        "eksedif ve eks opsiyoneldir"
+      ]
+    },
+    "comments": {
+      "singleLine": {
+        "syntax": "// yorum",
+        "example": "// Bu bir yorum satırı"
+      },
+      "multiLine": {
+        "syntax": "/* yorum */",
+        "example": "/* Bu çok satırlı\nyorum bloğudur */"
+      }
+    },
+    "stringLiterals": {
+      "syntax": "\"metin\"",
+      "examples": [
+        "\"Merhaba Dünya\"",
+        "\"Sayı: \" + sayi"
+      ],
+      "rules": [
+        "String değerler çift tırnak içinde olmalıdır",
+        "String içinde özel karakterler escape edilebilir"
+      ]
+    },
+    "numberLiterals": {
+      "types": ["integer", "float"],
+      "examples": ["5", "10", "3.14", "2.5"],
+      "rules": [
+        "Tam sayılar doğrudan yazılabilir",
+        "Ondalıklı sayılar nokta ile ayrılır"
+      ]
+    }
+  },
+  "dataTypes": {
+    "primitive": [
+      {
+        "type": "reqem",
+        "english": "integer",
+        "size": "32-bit",
+        "range": "-2,147,483,648 to 2,147,483,647",
+        "example": "reqem sayi = 42",
+        "defaultValue": 0
+      },
+      {
+        "type": "herif",
+        "english": "string",
+        "size": "dynamic",
+        "description": "Unicode string",
+        "example": "herif mesaj = \"Merhaba\"",
+        "defaultValue": "\"\""
+      }
+    ],
+    "complex": [
+      {
+        "type": "dizi",
+        "english": "array",
+        "syntax": "dizi[tip] isim = [deger1, deger2, ...]",
+        "example": "dizi[reqem] sayilar = [1, 2, 3, 4, 5]"
+      }
+    ]
+  },
+  "builtInFunctions": {
+    "output": [
+      {
+        "name": "yazdir",
+        "description": "Ekrana yazdırma",
+        "parameters": ["...degerler"],
+        "returnType": "void",
+        "example": "yazdir: \"Merhaba\", sayi"
+      }
+    ],
+    "fileOperations": [
+      {
+        "name": "dosya_oku",
+        "description": "Dosyadan okuma",
+        "parameters": ["herif dosyaYolu"],
+        "returnType": "herif",
+        "example": "herif icerik = dosya_oku(\"dosya.txt\")"
+      },
+      {
+        "name": "dosya_yaz",
+        "description": "Dosyaya yazma",
+        "parameters": ["herif dosyaYolu", "herif icerik"],
+        "returnType": "void",
+        "example": "dosya_yaz(\"cikti.txt\", \"Merhaba\")"
+      }
+    ]
+  },
+  "examples": {
+    "helloWorld": {
+      "title": "Merhaba Dünya",
+      "code": "baslanqic\n    yazdir: \"Merhaba Dünya\"\nson",
+      "output": "Merhaba Dünya"
+    },
+    "variables": {
+      "title": "Değişkenler",
+      "code": "baslanqic\n    reqem sayi = 10\n    herif mesaj = \"AC Dili\"\n    yazdir: mesaj, \":\", sayi\nson",
+      "output": "AC Dili : 10"
+    },
+    "functions": {
+      "title": "Fonksiyonlar",
+      "code": "baslanqic\n    fonksiyon topla(reqem a, reqem b) : reqem {\n        geri a + b\n    }\n    \n    reqem sonuc = topla<5, 3>\n    yazdir: \"Toplam:\", sonuc\nson",
+      "output": "Toplam: 8"
+    },
+    "conditionals": {
+      "title": "Koşullu İfadeler",
+      "code": "baslanqic\n    reqem sayi = 5\n    \n    dif (sayi > 0) {\n        yazdir: \"Pozitif\"\n    } eksedif (sayi < 0) {\n        yazdir: \"Negatif\"\n    } eks {\n        yazdir: \"Sıfır\"\n    }\nson",
+      "output": "Pozitif"
+    },
+    "factorial": {
+      "title": "Faktöriyel Hesaplama",
+      "code": "baslanqic\n    fonksiyon faktoriyel(reqem n) : reqem {\n        dif (n <= 1) {\n            geri 1\n        }\n        geri n * faktoriyel<n - 1>\n    }\n    \n    reqem sayi = 5\n    yazdir: \"Faktöriyel:\", faktoriyel<sayi>\nson",
+      "output": "Faktöriyel: 120"
+    },
+    "calculator": {
+      "title": "Hesap Makinesi",
+      "code": "baslanqic\n    fonksiyon hesapla(reqem a, reqem b, herif islem) : reqem {\n        dif (islem == \"+\") { geri a + b }\n        dif (islem == \"-\") { geri a - b }\n        dif (islem == \"*\") { geri a * b }\n        dif (islem == \"/\") { geri a / b }\n        geri 0\n    }\n    \n    reqem sayi1 = 10\n    reqem sayi2 = 5\n    \n    yazdir: \"Toplama:\", hesapla<sayi1, sayi2, \"+\">\n    yazdir: \"Çıkarma:\", hesapla<sayi1, sayi2, \"-\">\nson",
+      "output": "Toplama: 15\nÇıkarma: 5"
+    }
+  },
+  "compilation": {
+    "targetLanguages": [
+      {
+        "language": "Java",
+        "description": "AC kodu Java'ya derlenebilir",
+        "example": "AC kod -> Java .class dosyası"
+      },
+      {
+        "language": "C",
+        "description": "AC kodu C'ye derlenebilir",
+        "example": "AC kod -> C .exe dosyası"
+      },
+      {
+        "language": "Python (KBIR)",
+        "description": "AC kodu Python interpreter ile çalıştırılabilir",
+        "example": "python kbir.py program.ac"
+      }
+    ],
+    "process": [
+      "1. Lexer: Kodu token'lara ayırır",
+      "2. Parser: Token'ları AST'ye dönüştürür",
+      "3. Interpreter/Compiler: AST'yi hedef dile çevirir"
+    ]
+  },
+  "standards": {
+    "naming": {
+      "variables": "camelCase veya snake_case",
+      "functions": "camelCase",
+      "constants": "UPPER_CASE",
+      "classes": "PascalCase"
+    },
+    "codeStyle": {
+      "indentation": "4 boşluk veya tab",
+      "lineLength": "Önerilen: 80-100 karakter",
+      "comments": "Kod açıklamaları için // kullanın"
+    },
+    "bestPractices": [
+      "Değişken isimlerini anlamlı seçin",
+      "Fonksiyonları tek bir iş yapacak şekilde yazın",
+      "Kod tekrarından kaçının",
+      "Yorumlar ekleyin",
+      "Hata kontrolü yapın"
+    ]
+  },
+  "versionHistory": {
+    "5.0": {
+      "releaseDate": "2024",
+      "features": [
+        "Android IDE desteği",
+        "KBIR Python interpreter",
+        "Blockchain güvenlik sistemi",
+        "Firebase entegrasyonu",
+        "Gelişmiş hata yönetimi"
+      ]
+    },
+    "3.2": {
+      "releaseDate": "2022",
+      "features": [
+        "Desktop IDE",
+        "Java ve C derleyici desteği",
+        "GUI arayüz"
+      ]
+    },
+    "3.0": {
+      "releaseDate": "2022-06-14",
+      "features": [
+        "İlk stabil sürüm",
+        "Temel dil özellikleri"
+      ]
+    }
+  },
+  "resources": {
+    "documentation": [
+      "AC Kullanıcı Kılavuzu",
+      "AC Geliştirici Kılavuzu",
+      "AC Derleme Kılavuzu"
+    ],
+    "tools": [
+      "AC-T-IDE Desktop",
+      "AC-T-IDE Android",
+      "KBIR Interpreter"
+    ],
+    "community": [
+      "GitHub Repository",
+      "Developer Forum",
+      "Issue Tracker"
+    ]
+  },
+  "compatibility": {
+    "java": {
+      "version": "Java 13+",
+      "compiler": "javac",
+      "output": ".class files"
+    },
+    "c": {
+      "version": "C11+",
+      "compiler": "gcc, clang",
+      "output": ".exe, .out files"
+    },
+    "python": {
+      "version": "Python 3.7+",
+      "interpreter": "KBIR",
+      "output": "Direct execution"
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2024",
+    "formatVersion": "1.0",
+    "language": "tr",
+    "encoding": "UTF-8"
+  }
+}
+
